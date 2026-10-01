@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Sans:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ivory text-ink font-body antialiased;
+}
+
+/* Signature arch-frame shape, used for photos site-wide */
+.arch {
+  border-radius: 999px 999px 8px 8px;
+  overflow: hidden;
+}
+.arch-frame {
+  position: relative;
+}
+.arch-frame::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border: 1px solid theme('colors.gold');
+  border-radius: 999px 999px 12px 12px;
+  pointer-events: none;
+}
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, theme('colors.gold') 20%, theme('colors.gold') 80%, transparent);
+}
+
+.corner-mark {
+  width: 34px;
+  height: 34px;
+  border-top: 1px solid theme('colors.gold');
+  border-left: 1px solid theme('colors.gold');
+}
+
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: theme('colors.gold');
+  transition: width 0.35s ease;
+}
+.link-underline:hover::after {
+  width: 100%;
+}
+
+::selection {
+  background: theme('colors.gold-soft');
+  color: theme('colors.ink');
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
