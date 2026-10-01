@@ -38,6 +38,7 @@ export default function Hero() {
             "linear-gradient(105deg, rgba(15,6,7,0.88) 0%, rgba(15,6,7,0.72) 30%, rgba(15,6,7,0.35) 55%, rgba(15,6,7,0.05) 75%)",
         }}
       />
+
       <div
         className="absolute inset-0"
         style={{
@@ -55,8 +56,9 @@ export default function Hero() {
         Moh Mayaa Media
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 min-h-screen flex flex-col justify-center pt-20">
-        <div className="max-w-xl">
+      {/* ONLY TEXT POSITIONING CHANGED */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 min-h-screen flex flex-col items-center justify-center pt-20 text-center">
+        <div className="max-w-3xl">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -76,6 +78,7 @@ export default function Hero() {
             <span className="md:hidden">
               Your one stop solution for every kind of celebration.
             </span>
+
             <span className="hidden md:inline">
               From the first hamper to the last dance, Moh Mayaa Media is the
               one-stop solution for every kind of celebration.
@@ -87,7 +90,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden md:flex flex-wrap items-center gap-5"
+            className="hidden md:flex flex-wrap items-center justify-center gap-5"
           >
             <a
               href="#contact"
