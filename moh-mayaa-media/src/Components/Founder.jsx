@@ -50,7 +50,7 @@ export default function Founder() {
             transition={{ duration: 0.6 }}
             className="relative flex items-center gap-4 mb-6"
           >
-            <div className="corner-mark" />
+
             <p className="text-[13px] uppercase tracking-[0.2em] text-gold-soft">
               The Founder
             </p>

@@ -48,13 +48,6 @@ export default function Hero() {
 
       <div className="pointer-events-none absolute inset-5 md:inset-8 border border-gold/30 z-10" />
 
-      <div
-        className="hidden md:block absolute left-10 top-1/2 -translate-y-1/2 z-10 text-[11px] uppercase tracking-[0.3em] text-ivory/50"
-        style={{ writingMode: "vertical-rl", transform: "translateY(-50%) rotate(180deg)" }}
-      >
-        Moh Mayaa Media
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 min-h-screen flex flex-col justify-center pt-20">
         <div className="max-w-xl">
           <motion.h1

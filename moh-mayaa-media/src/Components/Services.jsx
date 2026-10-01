@@ -74,7 +74,7 @@ export default function Services() {
             transition={{ duration: 0.6 }}
             className="text-[13px] uppercase tracking-[0.2em] text-oxblood mb-6"
           >
-            What We Handle
+           
           </motion.p>
 
           <motion.h2

@@ -15,17 +15,26 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Floating wrapper (only the pill itself is clickable) */}
       <motion.header
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="fixed top-0 left-0 right-0 z-50 bg-ivory/90 backdrop-blur-sm border-b border-gold/20"
+        className="fixed top-3 md:top-5 left-0 right-0 z-50 px-3.5 md:px-7 pointer-events-none"
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-3">
-            <img src={logo} alt="Moh Mayaa Media" className="h-20 md:h-23 w-auto" />
+        {/* The pill (using a 3-column grid on desktop to center the links perfectly) */}
+        <div className="pointer-events-auto w-full max-w-7xl mx-auto h-[68px] md:h-[72px] px-5 md:px-8 flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] rounded-full bg-ivory/90 backdrop-blur-md border border-gold/30 shadow-[0_15px_40px_rgba(110,31,46,0.12)]">
+
+          {/* Logo (Left Column) */}
+          <a href="#home" className="flex items-center gap-3 md:justify-self-start">
+            <img
+              src={logo}
+              alt="Moh Mayaa Media"
+              className="h-12 md:h-14 w-auto scale-125 origin-left"
+            />
           </a>
 
+          {/* Navigation Links (Center Column) */}
           <nav className="hidden md:flex items-center gap-9 text-[13px] uppercase tracking-[0.12em] text-ink-soft">
             {links.map((link) => (
               <a
@@ -38,9 +47,10 @@ export default function Navbar() {
             ))}
           </nav>
 
+          {/* CTA Button (Right Column) */}
           <a
             href="#contact"
-            className="hidden md:inline-block text-[13px] uppercase tracking-[0.1em] border border-oxblood text-oxblood px-5 py-2.5 hover:bg-oxblood hover:text-ivory transition-colors"
+            className="hidden md:inline-block md:justify-self-end text-[13px] uppercase tracking-[0.1em] border border-oxblood text-oxblood px-5 py-2.5 rounded-full hover:bg-oxblood hover:text-ivory transition-colors"
           >
             Plan My Celebration
           </a>
@@ -100,7 +110,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: links.length * 0.06 }}
-              className="mt-4 text-[13px] uppercase tracking-[0.1em] border border-ivory/60 text-ivory px-6 py-3 hover:bg-ivory/10 transition-colors"
+              className="mt-4 text-[13px] uppercase tracking-[0.1em] border border-ivory/60 text-ivory px-6 py-3 rounded-full hover:bg-ivory/10 transition-colors"
             >
               Plan My Celebration
             </motion.a>
