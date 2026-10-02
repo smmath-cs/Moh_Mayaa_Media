@@ -18,9 +18,9 @@ export default function App() {
       {/* =========================
           VISUAL BREAK SECTION
       ========================== */}
-      <section className="relative w-full overflow-hidden my-16 md:my-24">
-        {/* Video / Image Container with Overlay */}
-        <div className="relative w-full h-[60vh] md:h-[75vh] flex items-center justify-center">
+      <section className="relative w-full overflow-hidden my-12 md:my-16">
+        {/* Video / Image Container */}
+        <div className="relative w-full h-[65vh] md:h-[80vh] flex items-end">
           <video
             autoPlay
             muted
@@ -32,17 +32,18 @@ export default function App() {
             <source src="/videos/celebration.mp4" type="video/mp4" />
           </video>
 
-          {/* Oxblood Tint Overlay */}
-          <div className="absolute inset-0 bg-oxblood/60 backdrop-blur-[1px]" />
+          {/* Subtle Dark Gradient Overlay (Gives the dark background look without hiding lanterns) */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
 
-          {/* Centered Overlay Text */}
-          <div className="relative z-10 text-center px-6 max-w-4xl flex flex-col items-center gap-2">
-            <span className="text-gold-light text-xs md:text-sm uppercase tracking-[0.3em]">
+          {/* Bottom-Left Aligned Text Block */}
+          <div className="relative z-10 px-8 md:px-16 pb-12 md:pb-16 max-w-2xl text-left">
+            <span className="block text-yellow-400 text-xs md:text-sm uppercase tracking-[0.25em] mb-3">
               CELEBRATIONS
             </span>
-            <strong className="font-display text-ivory text-3xl md:text-6xl font-normal tracking-wide">
-              Made to be remembered.
-            </strong>
+            <h2 className="font-display text-ivory text-4xl sm:text-5xl md:text-7xl font-normal leading-[1.05] tracking-tight">
+              Made to be <br />
+              remembered.
+            </h2>
           </div>
         </div>
       </section>

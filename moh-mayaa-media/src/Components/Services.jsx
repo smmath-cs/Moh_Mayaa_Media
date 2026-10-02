@@ -63,20 +63,10 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative bg-ivory py-24 md:py-28 overflow-hidden">
+    <section id="services" className="relative bg-ivory pt-10 md:pt-14 pb-24 md:pb-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         {/* Heading */}
-        <div className="mb-12 md:mb-20 text-center md:text-left">
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.5 }}
-            transition={{ duration: 0.6 }}
-            className="text-[13px] uppercase tracking-[0.2em] text-oxblood mb-6"
-          >
-           
-          </motion.p>
-
+        <div className="mb-10 md:mb-12 text-center md:text-left">
           <motion.h2
             initial={{ opacity: 0, y: 26 }}
             whileInView={{ opacity: 1, y: 0 }}
