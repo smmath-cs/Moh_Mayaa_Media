@@ -75,18 +75,7 @@ export default function HowWeWork() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16">
         {/* Heading */}
         <div className="mb-16 md:mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.5 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center gap-4 mb-6"
-          >
-            <div className="corner-mark border-gold" />
-            <p className="text-[13px] uppercase tracking-[0.2em] text-gold-soft">
-              How We Work
-            </p>
-          </motion.div>
+          
 
           <motion.h2
             initial={{ opacity: 0, y: 24 }}

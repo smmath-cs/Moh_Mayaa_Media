@@ -28,17 +28,6 @@ export default function Contact() {
       />
       <div className="pointer-events-none absolute inset-5 md:inset-8 border border-gold/25 z-10" />
 
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: false, amount: 0.4 }}
-        transition={{ duration: 0.8 }}
-        className="hidden md:block absolute left-10 top-1/2 -translate-y-1/2 z-10 text-[11px] uppercase tracking-[0.3em] text-ivory/50"
-        style={{ writingMode: "vertical-rl", transform: "translateY(-50%) rotate(180deg)" }}
-      >
-        Let's Talk
-      </motion.div>
-
       <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 14 }}

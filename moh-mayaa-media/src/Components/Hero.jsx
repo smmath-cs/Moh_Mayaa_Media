@@ -59,6 +59,8 @@ export default function Hero() {
       {/* ONLY TEXT POSITIONING CHANGED */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 min-h-screen flex flex-col items-center justify-center pt-20 text-center">
         <div className="max-w-3xl">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 min-h-screen flex flex-col justify-center pt-20">
+        <div className="max-w-xl">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

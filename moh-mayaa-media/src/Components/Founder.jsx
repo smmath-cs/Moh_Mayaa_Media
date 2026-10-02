@@ -5,11 +5,15 @@ import manojT from "../assets/manoj.png";
 
 export default function Founder() {
   const photoRef = useRef(null);
+
+  // Scroll parallax mapping
   const { scrollYProgress } = useScroll({
     target: photoRef,
     offset: ["start end", "end start"],
   });
-  const photoY = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+
+  // Parallax range (-8% to 8%)
+  const photoY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
   const paragraphs = [
     "Manoj spent years building a career in tech solving problems, meeting deadlines, living by logic and structure. Eventually, he realised the moments he looked forward to most weren't in front of a screen, but at weddings, celebrations, and gatherings where people came together.",
@@ -32,7 +36,7 @@ export default function Founder() {
         style={{ background: "radial-gradient(circle, #E8CD9E 0%, transparent 70%)" }}
       />
 
-      <div className="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-12 gap-y-8 md:gap-x-14 md:gap-y-0 items-center relative">
+      <div className="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-12 gap-y-6 md:gap-x-14 md:gap-y-0 items-center relative">
         {/* 1. HEADER (Mobile Order 1, Desktop Right Col Row 1) */}
         <div className="order-1 md:order-2 md:col-span-7 relative w-full">
           {/* ghost word behind the copy */}
@@ -46,11 +50,10 @@ export default function Founder() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="relative flex items-center gap-4 mb-6"
+            className="relative flex items-center gap-4 mb-4"
           >
-            <div className="corner-mark" />
             <p className="text-[13px] uppercase tracking-[0.2em] text-gold-soft">
               The Founder
             </p>
@@ -59,19 +62,20 @@ export default function Founder() {
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="relative font-display text-[34px] md:text-[46px] leading-tight mb-4"
+            className="relative font-display text-[34px] md:text-[46px] leading-tight mb-2"
           >
             Manoj S Tripathi
           </motion.h2>
 
+          {/* Reduced bottom margin here (from mb-8 to mb-3) */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-[13px] uppercase tracking-[0.15em] text-gold-soft/70 mb-0 md:mb-8"
+            className="text-[13px] uppercase tracking-[0.15em] text-gold-soft/70 mb-0 md:mb-3"
           >
             Co-Founder, Moh Mayaa Media
           </motion.p>
@@ -82,18 +86,20 @@ export default function Founder() {
           ref={photoRef}
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8 }}
           className="order-2 md:order-1 md:col-span-5 md:row-span-2 w-full my-4 md:my-0"
         >
-          <div className="arch-frame max-w-sm mx-auto">
-            <div className="arch aspect-[3/4] w-full overflow-hidden">
-              <motion.div
-                className="w-full h-full"
-                style={{
-                  y: photoY,
-                  background: `url(${manojT}) center/cover no-repeat`,
-                }}
+          <div className="arch-frame max-w-sm mx-auto group cursor-pointer">
+            {/* Outer arch acts as clipping mask */}
+            <div className="arch relative aspect-[3/4] w-full overflow-hidden rounded-t-full border border-gold/30">
+              <motion.img
+                src={manojT}
+                alt="Manoj S Tripathi"
+                style={{ y: photoY }}
+                whileHover={{ scale: 1.06 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="absolute inset-x-0 -top-[10%] h-[120%] w-full object-cover brightness-[0.95] group-hover:brightness-100 transition-all duration-500"
               />
             </div>
           </div>
@@ -106,7 +112,7 @@ export default function Founder() {
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, delay: 0.25 + i * 0.15 }}
               className="relative text-[15px] md:text-base leading-[1.9] text-ivory/85 mb-5 last:mb-0"
             >
