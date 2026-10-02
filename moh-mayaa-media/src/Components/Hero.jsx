@@ -38,6 +38,7 @@ export default function Hero() {
             "linear-gradient(105deg, rgba(15,6,7,0.88) 0%, rgba(15,6,7,0.72) 30%, rgba(15,6,7,0.35) 55%, rgba(15,6,7,0.05) 75%)",
         }}
       />
+
       <div
         className="absolute inset-0"
         style={{
@@ -48,6 +49,16 @@ export default function Hero() {
 
       <div className="pointer-events-none absolute inset-5 md:inset-8 border border-gold/30 z-10" />
 
+      <div
+        className="hidden md:block absolute left-10 top-1/2 -translate-y-1/2 z-10 text-[11px] uppercase tracking-[0.3em] text-ivory/50"
+        style={{ writingMode: "vertical-rl", transform: "translateY(-50%) rotate(180deg)" }}
+      >
+        Moh Mayaa Media
+      </div>
+
+      {/* ONLY TEXT POSITIONING CHANGED */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 min-h-screen flex flex-col items-center justify-center pt-20 text-center">
+        <div className="max-w-3xl">
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 min-h-screen flex flex-col justify-center pt-20">
         <div className="max-w-xl">
           <motion.h1
@@ -69,6 +80,7 @@ export default function Hero() {
             <span className="md:hidden">
               Your one stop solution for every kind of celebration.
             </span>
+
             <span className="hidden md:inline">
               From the first hamper to the last dance, Moh Mayaa Media is the
               one-stop solution for every kind of celebration.
@@ -80,7 +92,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden md:flex flex-wrap items-center gap-5"
+            className="hidden md:flex flex-wrap items-center justify-center gap-5"
           >
             <a
               href="#contact"
