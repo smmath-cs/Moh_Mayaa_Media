@@ -77,15 +77,41 @@ export default function Services() {
             What We Handle
           </motion.p>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 26 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="font-display text-[38px] md:text-[54px] leading-[1.12] text-ink max-w-3xl mx-auto md:mx-0"
-          >
-            One team. Zero vendors to chase.
-          </motion.h2>
+     <motion.h2
+  className="font-display text-[38px] md:text-[54px] leading-[1.12] text-ink max-w-3xl mx-auto md:mx-0"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.3 }}
+>
+  {"One team. Zero vendors to chase.".split(" ").map((word, wordIndex) => (
+    <span
+      key={wordIndex}
+      className="inline-block whitespace-nowrap mr-[0.25em]"
+    >
+      {word.split("").map((char, charIndex) => (
+        <motion.span
+          key={charIndex}
+          className="inline-block"
+          variants={{
+            hidden: {
+              y: 0,
+            },
+            visible: {
+              y: [0, -8, 0],
+              transition: {
+                duration: 0.5,
+                delay: (wordIndex * 5 + charIndex) * 0.025,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </span>
+  ))}
+</motion.h2>
         </div>
       </div>
 
